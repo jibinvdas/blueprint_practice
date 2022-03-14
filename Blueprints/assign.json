@@ -20,7 +20,7 @@
         },    
         "parameters": {
         "adlsgen2name": {
-          "value": "jibin_storage",
+          "value": "jibinstorage",
           "metadata": {
             "description": "name of the storage account"
           }
