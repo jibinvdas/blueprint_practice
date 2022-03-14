@@ -73,10 +73,8 @@
       "parameters": {
         "adlsgen2name": {
           "value": "[parameters('adlsgen2name')]"
-        },
-        "location": {
-          "value": "[parameters('location')]"
         }
+        
       }
     }
   }
