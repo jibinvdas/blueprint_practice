@@ -1,0 +1,19 @@
+
+{
+    "properties": {
+        "targetScope": "subscription",
+        "parameters": { 
+            "adlsgen2name": {
+                "type": "string"
+            }
+        },
+        "resourceGroups": {
+            "ResourceGroup":  {
+      
+              "type": "object"
+            }
+          },
+          "blueprintName": "jibin_blueprint"
+    },
+    "type": "Microsoft.Blueprint/blueprints" 
+}

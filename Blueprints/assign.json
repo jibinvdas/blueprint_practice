@@ -1,0 +1,31 @@
+{
+    "identity": {
+        "type": "userAssigned",
+        "tenantId": "687f51c3-0c5d-4905-84f8-97c683a5b9d1",
+        "userAssignedIdentities": {
+            "/subscriptions/93f91034-40e4-4f1b-8bfa-a1e90cf33e08/resourceGroups/jibin_resource_group/providers/Microsoft.ManagedIdentity/userAssignedIdentities/blueprint_mng_id": {}
+        }
+    },
+    "location": "eastus",
+    "properties": {
+        "blueprintId": "/subscriptions/93f91034-40e4-4f1b-8bfa-a1e90cf33e08/providers/Microsoft.Blueprint/blueprints/jibin_blueprint",
+        "resourceGroups": {
+            "ResourceGroup": {
+              "name": "jibin_resource_group",
+              "location": "eastus"
+            }
+        },
+        "locks": {
+            "mode": "none"
+        },    
+        "parameters": {
+        "adlsgen2name": {
+          "value": "jibin_storage",
+          "metadata": {
+            "description": "name of the storage account"
+          }
+        }
+      
+      }
+    }
+  }
