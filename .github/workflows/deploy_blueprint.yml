@@ -1,0 +1,38 @@
+name: Create and Assign Blueprint
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  Create_blueprint:
+    name: Create Blueprint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create Azure Blueprint
+        uses: neilpeterson/action-create-blueprint@master
+        env:
+          AZURETENANTID: ${{ secrets.SP_TENANT_ID }}
+          AZURECLIENTID: ${{ secrets.SP_CLIENT_ID }}
+          AZUREPASSWORD: ${{ secrets.SP_SECRET_PASS }}
+          
+        with:
+          scope: Subscription
+          azureSubscriptionID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          blueprintName: ${{ secrets.blueprintName }}
+          blueprintPath: Blueprints/DA_Accelerator
+
+      - name: Assign Azure Blueprint
+        uses: neilpeterson/action-assign-blueprint@master
+        env:
+          AZURETENANTID: ${{ secrets.SP_TENANT_ID }}
+          AZURECLIENTID: ${{ secrets.SP_CLIENT_ID }}
+          AZUREPASSWORD: ${{ secrets.SP_SECRET_PASS }}
+
+        with:
+          scope: Subscription
+          azureSubscriptionID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          assignmentName: ${{ secrets.assignmentName }}
+          blueprintName: ${{ secrets.blueprintName }}
+          AssignmentFilePath: Blueprints/DA_Accelerator/assign.json
